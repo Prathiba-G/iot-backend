@@ -9,7 +9,7 @@ const app = express();
 // ============================================
 // FORCE PORT 5000 - HARDCODED (NO process.env.PORT)
 // ============================================
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // ============================================
 // STARTUP VALIDATION
@@ -62,9 +62,9 @@ const allowedOrigins = [
   'https://localhost:5173',
   'https://localhost:5174',
   'https://localhost:8080',
-  'https://localhost:5000',
-  'https://neotechembeddedservices.in',
-  'https://www.neotechembeddedservices.in'
+ 'https://iot-frontend-ruddy-zeta.vercel.app',
+  'https://neotechembeddedservices.online',
+  'https://www.neotechembeddedservices.online'
 ];
 
 app.use(cors({
