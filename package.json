@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "fix-port": "powershell -ExecutionPolicy Bypass -File port-fix.ps1",
+    "check-port": "powershell -Command \"Get-NetTCPConnection -LocalPort 5000 -ErrorAction SilentlyContinue | Select-Object OwningProcess, @{Name='ProcessName';Expression={(Get-Process -Id $_.OwningProcess).ProcessName}}\"",
+    "dev": "npm start"
+  },
+
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
